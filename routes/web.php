@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 // Public pages
 Route::get('/', [LeaderboardController::class, 'index'])->name('home');
 Route::get('/sport/{slug}', [LeaderboardController::class, 'sport'])->name('sport.show');
+Route::get('/logged-out', [AuthController::class, 'loggedOut'])->name('logged-out');
 
 // Authentication
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');

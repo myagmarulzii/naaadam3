@@ -14,8 +14,19 @@
     </div>
     <nav>
         <a href="{{ route('home') }}">Нүүр</a>
-        <a href="{{ route('profile.show') }}">Профайл</a>
-        <a href="{{ route('admin.dashboard') }}">Админ</a>
+
+        @auth
+            <a href="{{ route('profile.show') }}">Профайл</a>
+            @if(auth()->user()->isAdmin())
+                <a href="{{ route('admin.dashboard') }}">Админ</a>
+            @endif
+            <form method="post" action="{{ route('logout') }}" class="inline-form">
+                @csrf
+                <button type="submit" class="link-button">Гарах</button>
+            </form>
+        @else
+            <a href="{{ route('login') }}">Нэвтрэх</a>
+        @endauth
     </nav>
 </header>
 <main class="container">

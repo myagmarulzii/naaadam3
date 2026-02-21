@@ -21,7 +21,7 @@ php artisan serve
 
 ## Гол модулиуд
 - Public leaderboard: `/`, `/sport/{slug}`
-- Auth: `/login`, `/logout`
+- Auth: `/login`, `/logout`, `/logged-out`
 - Member profile: `/profile`
 - Admin dashboard: `/admin`
 - Admin CRUD:
